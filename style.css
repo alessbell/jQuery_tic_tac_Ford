@@ -1,0 +1,58 @@
+body {
+  font-size: 1.5em;
+  font-family: Helvetica;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    font-size: 0.8em;
+  }
+}
+
+table{
+  margin: 0 auto;
+  cursor: default;
+  border-spacing: 0;
+  width: 30em;
+  height: 30em;
+}
+
+td {
+  padding: 0;
+  width: 33.3%;
+  height: 33.3%;
+  font-size: 8em;
+  text-align: center;
+}
+
+table, td {
+  border: 1px solid black;
+}
+
+body.game-on td:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+
+body.game-on td.taken:hover {
+  cursor: default;
+  background-color: inherit;
+}
+
+td.win {
+  background-color: blue;
+}
