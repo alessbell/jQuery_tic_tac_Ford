@@ -1,9 +1,3 @@
-// function addimage1() {
-//   var RoFo = document.createElement("RoFo");
-//   RoFo.src = 'unnamed.png';
-//   document.body.appendChild(RoFo);
-// }
-
 var game = {
   turn: "X",
   instruct: function(str) {
@@ -21,8 +15,17 @@ var game = {
       $(this)
         .text(game.turn) // put an X or O in the cell
         .addClass('taken') // display as taken
-        .off('click'); // don't allow clicking on it again
-      // check to see if the game's over
+        // .addClass('rofo')
+        .off('click') // don't allow clicking on it again
+
+      if(typeof game.turn != 'undefined' && game.turn == "X") {
+        $(this).addClass('rofo')
+      }
+
+      if(typeof game.turn != 'undefined' && game.turn == "O") {
+        $(this).addClass('chowtime')
+      }
+
       var game_over = false;
       if ($('td.taken').length > 4) { // no one can win until the 5th turn
         if (game.win_on_turn($(this).parent().index(), $(this).index())) {
@@ -46,6 +49,8 @@ var game = {
     });
   // begin
   $('body').addClass('game-on');
+  $('td').removeClass('rofo');
+  $('td').removeClass('chowtime');
   game.turn_begin();
   },
   turn_begin: function() {

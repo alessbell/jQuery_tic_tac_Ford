@@ -27,8 +27,8 @@ table{
   margin: 0 auto;
   cursor: default;
   border-spacing: 0;
-  width: 30em;
-  height: 30em;
+  width: 600px;
+  height: 600px;
 }
 
 td {
@@ -54,5 +54,23 @@ body.game-on td.taken:hover {
 }
 
 td.win {
-  background-color: blue;
+  background-color: green;
+}
+
+td.taken {
+  color: transparent;
+}
+
+.cell {
+  background: none;
+}
+
+.rofo {
+  background: url('unnamed.png');
+  background-size: 200px 200px;
+}
+
+.chowtime {
+  background: url('olivia.jpg');
+  background-size: 200px 200px;
 }
